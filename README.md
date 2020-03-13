@@ -1,5 +1,7 @@
 # Autopug
 
+> This repository is deprecated.
+
 ## Installation
 
 1. Clone this repository

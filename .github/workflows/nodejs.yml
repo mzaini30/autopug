@@ -10,11 +10,6 @@ on:
     branches: [ master ]
 
 jobs:
-  inputs:
-    access-token:
-      description: "A personal access token needed to push your site after it has been built."
-      required: true
-      
   build:
 
     runs-on: ubuntu-latest
