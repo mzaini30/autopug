@@ -1,6 +1,6 @@
 # Autopug
 
-> This repository is deprecated.
+> It's alpha release.
 
 ## Installation
 
