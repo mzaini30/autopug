@@ -1,0 +1,32 @@
+name: Olah Pug
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout ke master
+      uses: actions/checkout@v2
+    - name: Setting Node JS 
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
+        registry-url: https://registry.npmjs.org/
+    - name: Setting SSH
+      run: |
+        mkdir -p ~/.ssh/
+        echo "${{secrets.DEPLOY_KEY}}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
+    - name: Nyiapin Git 
+      run: |
+        git config --global user.name "mzaini30"
+        git config --global user.email "muhzaini30@gmail.com"
+    - name: Pasang semua tools dari NPM 
+      run: npm i -g pug-cli jstransformer-babel jstransformer-stylus jstransformer-marked babel-preset-env jstransformer-uglify-css jstransformer-uglify-js
+    - name: Jalankan Pug 
+      run: |
+        cd pug 
+        pug . -o ..
