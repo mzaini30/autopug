@@ -27,12 +27,9 @@ jobs:
     - name: Pasang semua tools dari NPM 
       run: npm i -g pug-cli jstransformer-babel jstransformer-stylus jstransformer-marked babel-preset-env jstransformer-uglify-css jstransformer-uglify-js
     - name: Jalankan Pug 
-      run: |
-        cd pug 
-        pug . -o ..
+      run: pug . -o ..
     - name: Publish ke Github Pages 
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: .
-        publish_branch: master
