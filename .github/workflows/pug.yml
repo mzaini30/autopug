@@ -31,8 +31,7 @@ jobs:
         cd pug 
         pug . -o ..
     - name: Publish ke Github Pages 
-      uses: peaceiris/actions-gh-pages@v2.1.0
-      env:
-        ACTIONS_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-        PUBLISH_BRANCH: master 
-        PUBLISH_DIR: .
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.DEPLOY_KEY }}
+        publish_dir: .
