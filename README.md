@@ -1,5 +1,7 @@
 # Autopug
 
+![autopug](https://github.com/mzaini30/autopug/workflows/autopug/badge.svg)
+
 ## Installation
 
 1. Clone this repository
