@@ -5,7 +5,8 @@
 ## Installation
 
 1. Clone this repository
-2. Place all your `pug` files in `pug/`
+2. Place all your `pug` files in `pug/` folder
+3. Place all your static assets in `html/` folder
 
 ## Pug's filters available
 
